@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Residence } from 'src/core/models/residence';
 
 @Component({
@@ -7,6 +8,7 @@ import { Residence } from 'src/core/models/residence';
   styleUrls: ['./residences.component.css'],
 })
 export class ResidencesComponent {
+
   address: string = '';
   listResidences: Residence[] = [
     {
