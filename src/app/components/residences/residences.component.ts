@@ -8,7 +8,6 @@ import { Residence } from 'src/core/models/residence';
   styleUrls: ['./residences.component.css'],
 })
 export class ResidencesComponent {
-
   address: string = '';
   listResidences: Residence[] = [
     {
@@ -49,17 +48,22 @@ export class ResidencesComponent {
       residence.address.toLocaleLowerCase().includes(value.toLocaleLowerCase())
     );
   }
+
   addFavoris(residence: Residence) {
     let exist = false;
+    let pos: Residence = new Residence();
     this.favoris.forEach((res) => {
       if (res.id == residence.id) {
         exist = true;
+        pos = res;
       }
     });
-    if (!exist) {
-      this.favoris.push(residence);
-      this.likeStatue = 'liked';
-    } else this.likeStatue = 'disliked';
+    if (!exist) this.favoris.push(residence);
+    else this.favoris = this.favoris.filter((el) => el.id != pos.id);
+  }
+  isFavoris(id: number) {
+    let contain = this.favoris.some((fav) => fav.id === id);
+    return contain ? 'liked' : 'disliked';
   }
   showLocation(address: string) {
     if (address == 'inconnu') return alert('An Error occured !');

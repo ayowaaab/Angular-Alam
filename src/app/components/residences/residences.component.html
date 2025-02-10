@@ -45,7 +45,7 @@
       <h5
         class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
       >
-        {{ residence.name }}
+        {{ residence.address }}
       </h5>
       <div [ngSwitch]="residence.status.toLocaleLowerCase()">
         <h5
@@ -74,7 +74,7 @@
       alt="img"
     />
     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-      {{ residence.address }}
+      {{ residence.name }}
     </p>
     <div class="flex justify-between">
       <button
@@ -101,7 +101,7 @@
       <button
         (click)="addFavoris(residence)"
         type="button"
-        [class]="likeStatue"
+        [class]="isFavoris(residence.id)"
       >
         <svg
           class="w-4 h-4"
@@ -121,5 +121,10 @@
 </div>
 <h1 class="text-white text-center text-2xl font-semibold my-5">
   Address : {{ address }}
+</h1>
+<h1 class="text-white text-2xl">
+  List des favoris → [
+  <span *ngFor="let el of favoris"> {{ el.name }}, </span>
+  ]
 </h1>
 <router-outlet></router-outlet>
