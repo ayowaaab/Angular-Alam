@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ResidenceService } from 'src/app/service/residence.service';
 import { Residence } from 'src/core/models/residence';
 
 @Component({
@@ -43,12 +44,16 @@ export class ResidencesComponent {
   searchValue: string = '';
   favoris: Residence[] = [];
   likeStatue: string = 'disliked';
+  constructor(private residenceService: ResidenceService) {
+    console.log(
+      residenceService.getDataById(this.listResidences, 'name', 'El fel')
+    );
+  }
   handelFilterList(value: string) {
     this.filtredList = this.listResidences.filter((residence) =>
       residence.address.toLocaleLowerCase().includes(value.toLocaleLowerCase())
     );
   }
-
   addFavoris(residence: Residence) {
     let exist = false;
     let pos: Residence = new Residence();

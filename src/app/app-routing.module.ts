@@ -4,6 +4,7 @@ import { ResidencesComponent } from './components/residences/residences.componen
 import { HomeComponent } from './components/home/home.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { ResidencedetailsComponent } from './components/residences/residencedetails/residencedetails.component';
+import { FormResidenceComponent } from './components/form-residence/form-residence.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -13,6 +14,7 @@ const routes: Routes = [
     component: ResidencesComponent,
     children: [{ path: ':id', component: ResidencedetailsComponent }],
   },
+  {path:'form', component:FormResidenceComponent},
   { path: '**', component: NotfoundComponent },
 ];
 

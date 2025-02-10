@@ -1,0 +1,9 @@
+.input {
+  @apply px-4 py-2 text-lg bg-transparent border-white border rounded-md;
+}
+.btn {
+  @apply px-12 bg-sky-600 hover:bg-sky-800 transition text-white py-3 rounded-md disabled:opacity-50 disabled:cursor-not-allowed;
+}
+.alert {
+  @apply text-white border-2 rounded-md border-red-300 px-4 py-2 text-lg bg-red-500;
+}

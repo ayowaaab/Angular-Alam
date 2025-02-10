@@ -1,0 +1,19 @@
+<h1 class="text-center text-5xl text-white font-bold my-10">Add Residance</h1>
+<form [formGroup]="formR" class="text-white">
+  <div class="grid items-center gap-5">
+    
+    <input formControlName="id" placeholder="ID" class="input" type="text" />
+    <p class="alert" *ngIf="id?.invalid && id?.touched">⚠️ Alert</p>
+    <input  formControlName="name" placeholder="Name" class="input" type="text" />
+    <p class="alert" *ngIf="name?.invalid && (name?.touched || name?.dirty)">⚠️ Alert</p>
+    <input  formControlName="address" placeholder="Address" class="input" type="text" />
+    <p class="alert" *ngIf="address?.errors?.['maxlength']">⚠️ Alert</p>
+    <input  formControlName="image" placeholder="Image" class="input" type="text" />
+    <p class="alert"*ngIf="image?.invalid && image?.touched" >⚠️ Alert</p>
+    <input  formControlName="status" placeholder="Status" class="input" type="text" />
+    <p class="alert"*ngIf="status?.errors?.['pattern'] && status?.touched" >⚠️ Alert</p>
+  </div>
+  <div class="text-center my-5">
+    <button [disabled]="formR.invalid" type="submit" class="btn">Submit</button>
+  </div>
+</form>                                                                       
