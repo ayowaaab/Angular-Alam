@@ -39,7 +39,7 @@
 <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3">
   <div
     class="p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700"
-    *ngFor="let residence of filtredList"
+    *ngFor="let residence of listResidences"
   >
     <div class="flex justify-between gap-2">
       <h5
@@ -127,4 +127,8 @@
   <span *ngFor="let el of favoris"> {{ el.name }}, </span>
   ]
 </h1>
+<div *ngIf="" >
+
+  <h1 class="text-5xl text-white text-center my-10">Le nombre est → {{showNumber()}}</h1>
+</div>
 <router-outlet></router-outlet>

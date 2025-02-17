@@ -10,7 +10,7 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
 import { HomeComponent } from './components/home/home.component';
 import { ResidencedetailsComponent } from './components/residences/residencedetails/residencedetails.component';
 import { FormResidenceComponent } from './components/form-residence/form-residence.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +21,14 @@ import { FormResidenceComponent } from './components/form-residence/form-residen
     ResidencedetailsComponent,
     FormResidenceComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, RouterModule,ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    RouterModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

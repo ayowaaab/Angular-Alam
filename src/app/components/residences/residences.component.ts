@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { ResidenceService } from 'src/app/service/residence.service';
 import { Residence } from 'src/core/models/residence';
 
@@ -8,50 +9,29 @@ import { Residence } from 'src/core/models/residence';
   templateUrl: './residences.component.html',
   styleUrls: ['./residences.component.css'],
 })
-export class ResidencesComponent {
+export class ResidencesComponent implements OnInit {
   address: string = '';
-  listResidences: Residence[] = [
-    {
-      id: 1,
-      name: 'El fel',
-      address: 'Borj Cedria',
-      image: '../../../assets/images/R1.jpeg',
-      status: 'Disponible',
-    },
-    {
-      id: 2,
-      name: 'El yasmine',
-      address: 'Ezzahra',
-      image: '../../../assets/images/R2.jpeg',
-      status: 'Disponible',
-    },
-    {
-      id: 3,
-      name: 'El Arij',
-      address: 'Rades',
-      image: '../../../assets/images/R3.jpeg',
-      status: 'Vendu',
-    },
-    {
-      id: 4,
-      name: 'El Anber',
-      address: 'inconnu',
-      image: '../../../assets/images/R4.jpeg',
-      status: 'En Construction',
-    },
-  ];
+  listResidences: Residence[] = [];
   filtredList: Residence[] = this.listResidences;
   searchValue: string = '';
   favoris: Residence[] = [];
   likeStatue: string = 'disliked';
-  constructor(private residenceService: ResidenceService) {
-    console.log(
-      residenceService.getDataById(this.listResidences, 'name', 'El fel')
-    );
+  constructor(private residenceService: ResidenceService) {}
+  ngOnInit(): void {
+    this.residenceService.getAllResidence().subscribe((data) => {
+      this.listResidences = data;
+    });
   }
   handelFilterList(value: string) {
     this.filtredList = this.listResidences.filter((residence) =>
       residence.address.toLocaleLowerCase().includes(value.toLocaleLowerCase())
+    );
+  }
+  showNumber() {
+    return this.residenceService.getDataById(
+      this.listResidences,
+      'name',
+      'El fel'
     );
   }
   addFavoris(residence: Residence) {
