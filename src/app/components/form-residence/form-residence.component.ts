@@ -56,6 +56,5 @@ export class FormResidenceComponent implements OnInit {
       console.log(data);
       this.router.navigate(['/residence']);
     });
-    // console.log('My Form: ' + JSON.stringify(this.formR.value));
   }
 }

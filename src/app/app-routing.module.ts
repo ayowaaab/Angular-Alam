@@ -5,6 +5,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { ResidencedetailsComponent } from './components/residences/residencedetails/residencedetails.component';
 import { FormResidenceComponent } from './components/form-residence/form-residence.component';
+import { UpdateComponent } from './components/update/update.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'residence-details/:id',
     component: ResidencedetailsComponent,
+  },
+  {
+    path: 'update/:id',
+    component: UpdateComponent,
   },
   { path: 'form', component: FormResidenceComponent },
   { path: '**', component: NotfoundComponent },

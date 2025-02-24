@@ -11,6 +11,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ResidencedetailsComponent } from './components/residences/residencedetails/residencedetails.component';
 import { FormResidenceComponent } from './components/form-residence/form-residence.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UpdateComponent } from './components/update/update.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     ResidencedetailsComponent,
     FormResidenceComponent,
+    UpdateComponent,
   ],
   imports: [
     BrowserModule,

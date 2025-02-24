@@ -22,7 +22,7 @@ export class ResidenceService {
     return this.http.post<Residence[]>(`${this.URL}`, data);
   }
   updateResidence(data: Residence, id: any) {
-    return this.http.put<Residence[]>(`${this.URL}/${id}`, data);
+    return this.http.put<Residence>(`${this.URL}${id}`, data);
   }
 
 
