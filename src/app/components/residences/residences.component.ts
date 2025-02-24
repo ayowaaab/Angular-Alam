@@ -17,6 +17,7 @@ export class ResidencesComponent implements OnInit {
   favoris: Residence[] = [];
   likeStatue: string = 'disliked';
   constructor(private residenceService: ResidenceService) {}
+
   ngOnInit(): void {
     this.residenceService.getAllResidence().subscribe((data) => {
       this.listResidences = data;
@@ -28,11 +29,11 @@ export class ResidencesComponent implements OnInit {
     );
   }
   showNumber() {
-    return this.residenceService.getDataById(
-      this.listResidences,
-      'name',
-      'El fel'
-    );
+   
+  }
+  deleteResidence(id: number) {
+    this.residenceService.deleteResidence(id);
+    this.ngOnInit();
   }
   addFavoris(residence: Residence) {
     let exist = false;

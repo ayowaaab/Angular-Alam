@@ -1,14 +1,18 @@
-<div class="text-white text-center">
-  <h1 class="px-6 my-2 text-3xl">
-    - route
-    <b class="text-blue-500">
-      {{ pathname }}
-    </b>
-    unlocked -
-  </h1>
-
-  <p class="">
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi aliquid,
-    doloremque laudantium aspernatur voluptas voluptate.
-  </p>
+<div class="flex justify-between items-center">
+  <div class="text-white text-3xl flex flex-col gap-5">
+    <h1>
+      This is<span class="font-semibold text-green-700">
+        {{ residence.address }}</span
+      >
+      Residence
+    </h1>
+    <h1>
+      ID ->
+      <span class="font-semibold text-green-700"> {{ residence.id }}</span>
+    </h1>
+    <h1>
+      Status -> <span class="text-red-600">{{ residence.status }}</span>
+    </h1>
+  </div>
+  <img class="w-1/2 h-[400px] object-cover" [src]="residence.image" alt="image" />
 </div>

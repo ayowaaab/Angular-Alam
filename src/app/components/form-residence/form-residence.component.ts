@@ -5,6 +5,8 @@ import {
   ValidationErrors,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ResidenceService } from 'src/app/service/residence.service';
 
 @Component({
   selector: 'app-form-residence',
@@ -14,6 +16,7 @@ import {
 export class FormResidenceComponent implements OnInit {
   formR!: FormGroup;
 
+  constructor(private service: ResidenceService, private router: Router) {}
   ngOnInit(): void {
     this.formR = new FormGroup({
       id: new FormControl('', [Validators.required, Validators.minLength(2)]),
@@ -49,6 +52,10 @@ export class FormResidenceComponent implements OnInit {
     return this.formR.get('status');
   }
   add() {
-    console.log('My Form: ' + JSON.stringify(this.formR.value));
+    this.service.addResidence(this.formR.value).subscribe((data) => {
+      console.log(data);
+      this.router.navigate(['/residence']);
+    });
+    // console.log('My Form: ' + JSON.stringify(this.formR.value));
   }
 }

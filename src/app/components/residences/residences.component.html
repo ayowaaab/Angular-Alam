@@ -117,6 +117,20 @@
         <span class="sr-only">Icon description</span>
       </button>
     </div>
+    <div class="flex justify-between gap-2">
+      <button
+        class="text-white bg-red-600 px-4 py-2 rounded-md mt-5"
+        (click)="deleteResidence(residence.id)"
+      >
+        Delete
+      </button>
+      <button
+      [routerLink]="['/residence-details', residence.id]"
+        class="text-white bg-sky-600 px-4 py-2 rounded-md mt-5"
+      >
+        Show Details
+      </button>
+    </div>
   </div>
 </div>
 <h1 class="text-white text-center text-2xl font-semibold my-5">
@@ -127,8 +141,9 @@
   <span *ngFor="let el of favoris"> {{ el.name }}, </span>
   ]
 </h1>
-<div *ngIf="" >
-
-  <h1 class="text-5xl text-white text-center my-10">Le nombre est → {{showNumber()}}</h1>
+<div *ngIf="">
+  <h1 class="text-5xl text-white text-center my-10">
+    Le nombre est → {{ showNumber() }}
+  </h1>
 </div>
 <router-outlet></router-outlet>

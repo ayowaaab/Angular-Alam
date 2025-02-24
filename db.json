@@ -1,32 +1,25 @@
 {
-    "residence": [
-        {
-            "id": 1,
-            "name": "El fel",
-            "address": "Borj Cedria",
-            "image": "../../../assets/images/R1.jpeg",
-            "status": "Disponible"
-        },
-        {
-            "id": 2,
-            "name": "El yasmine",
-            "address": "Ezzahra",
-            "image": "../../../assets/images/R2.jpeg",
-            "status": "Disponible"
-        },
-        {
-            "id": 3,
-            "name": "El Arij",
-            "address": "Rades",
-            "image": "../../../assets/images/R3.jpeg",
-            "status": "Vendu"
-        },
-        {
-            "id": 4,
-            "name": "El Anber",
-            "address": "inconnu",
-            "image": "../../../assets/images/R4.jpeg",
-            "status": "En Construction"
-        }
-    ]
+  "residence": [
+    {
+      "id": "12",
+      "name": "Lotif",
+      "address": "jhjhj",
+      "image": "/assets/images/R3.jpeg",
+      "status": "disponible"
+    },
+    {
+      "id": "555",
+      "name": "Samir",
+      "address": "zlkjglks",
+      "image": "/assets/images/R2.jpeg",
+      "status": "disponible"
+    },
+    {
+      "id": "55",
+      "name": "Ayoub",
+      "address": "fdjklkfdhj",
+      "image": "/assets/images/R1.jpeg",
+      "status": "disponible"
+    }
+  ]
 }

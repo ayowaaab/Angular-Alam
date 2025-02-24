@@ -14,6 +14,6 @@
     <p class="alert"*ngIf="status?.errors?.['pattern'] && status?.touched" >⚠️ Alert</p>
   </div>
   <div class="text-center my-5">
-    <button [disabled]="formR.invalid" type="submit" class="btn">Submit</button>
+    <button [disabled]="formR.invalid" (click)="add()" type="submit" class="btn">Submit</button>
   </div>
 </form>                                                                       

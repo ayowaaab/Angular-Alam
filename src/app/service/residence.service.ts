@@ -16,7 +16,7 @@ export class ResidenceService {
     this.http.delete<Residence[]>(`${this.URL}/${id}`);
   }
   getResidence(id: any) {
-    return this.http.get<Residence[]>(`${this.URL}/${id}`);
+    return this.http.get<Residence>(`${this.URL}${id}`);
   }
   addResidence(data: Residence) {
     return this.http.post<Residence[]>(`${this.URL}`, data);
@@ -25,11 +25,5 @@ export class ResidenceService {
     return this.http.put<Residence[]>(`${this.URL}/${id}`, data);
   }
 
-  getDataById(list: any[], criteria: any, value: any) {
-    let n = 0;
-    list.forEach((element) => {
-      element[criteria] === value ? n++ : n;
-    });
-    return n;
-  }
+
 }

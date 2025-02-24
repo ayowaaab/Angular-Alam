@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ResidenceService } from 'src/app/service/residence.service';
+import { Residence } from 'src/core/models/residence';
 
 @Component({
   selector: 'app-residencedetails',
@@ -8,9 +10,22 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ResidencedetailsComponent {
   pathname: string = '';
-  constructor(route:ActivatedRoute) {
-    console.log(route.snapshot.params)
-    this.pathname=route.snapshot.params['id'];
+  residence:Residence=new Residence;
+  constructor(
+    private service: ResidenceService,
+    private route: ActivatedRoute
+  ) {
+    this.pathname = route.snapshot.params['id'];
+    
+    
+    
+  }
+  ngOnInit() {
+    this.service.getResidence(this.pathname).subscribe((data) => {
+      console.log(data);
+      
+      this.residence = data;      
+    });
   }
 
 }

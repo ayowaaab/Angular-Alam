@@ -14,7 +14,11 @@ const routes: Routes = [
     component: ResidencesComponent,
     children: [{ path: ':id', component: ResidencedetailsComponent }],
   },
-  {path:'form', component:FormResidenceComponent},
+  {
+    path: 'residence-details/:id',
+    component: ResidencedetailsComponent,
+  },
+  { path: 'form', component: FormResidenceComponent },
   { path: '**', component: NotfoundComponent },
 ];
 
