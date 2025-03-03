@@ -35,3 +35,4 @@ import { UpdateComponent } from './components/update/update.component';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+

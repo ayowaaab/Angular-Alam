@@ -21,6 +21,7 @@ export class ResidencesComponent implements OnInit {
   ngOnInit(): void {
     this.residenceService.getAllResidence().subscribe((data) => {
       this.listResidences = data;
+      this.filtredList = data;
     });
   }
   handelFilterList(value: string) {
@@ -28,13 +29,13 @@ export class ResidencesComponent implements OnInit {
       residence.address.toLocaleLowerCase().includes(value.toLocaleLowerCase())
     );
   }
-  showNumber() {
-   
-  }
+
   deleteResidence(id: number) {
-    this.residenceService.deleteResidence(id);
-    this.ngOnInit();
+    this.residenceService.deleteResidence(id).subscribe((data) => {
+      this.ngOnInit();
+    });
   }
+  
   addFavoris(residence: Residence) {
     let exist = false;
     let pos: Residence = new Residence();

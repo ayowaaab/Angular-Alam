@@ -3,23 +3,30 @@
     {
       "name": "Lotif",
       "address": "Mornag",
-      "image": "/assets/images/R3.jpeg",
+      "image": "/assets/images/R4.jpeg",
       "status": "disponible",
       "id": "12"
     },
     {
-      "id": "555",
-      "name": "Samir",
-      "address": "zlkjglks",
+      "id": "12",
+      "name": "Fouchena",
+      "address": "Chotrana",
+      "image": "/assets/images/R1.jpeg",
+      "status": "disponible"
+    },
+    {
+      "id": "32",
+      "name": "Shay",
+      "address": "NNN",
       "image": "/assets/images/R2.jpeg",
       "status": "disponible"
     },
     {
-      "id": "55",
-      "name": "Ayoub",
-      "address": "fdjklkfdhj",
-      "image": "/assets/images/R1.jpeg",
-      "status": "disponible"
+      "name": "Arianna",
+      "address": "26-Bannana",
+      "image": "/assets/images/R3.jpeg",
+      "status": "disponible",
+      "id": "66"
     }
   ]
 }

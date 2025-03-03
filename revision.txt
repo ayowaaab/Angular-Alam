@@ -1,0 +1,22 @@
+-> MvvM
+-> @Component / @ngModule / @Injectable
+-> 4 types of data Biding
+        - interpolation -> ts vers html
+        - Property Biding -> ts vers html : [disabled] = "prop"
+        - Event Biding -> (click)="func()"
+        - Two way data biding -> [(ngModel)]=""
+
+two way data biding 7achtna bel module -> formsModule 
+2/ Routing
+-> RouterModule / package -> @angular/router
+    - ken t7ab tassn3o -> ng g m App-routing
+
+
+
+
+itha ma5dimtch bel get fel TS:
+get name(){
+    return formR.get('name');
+}
+
+timchi lel Input -> <input *ngIf ="formR.get('name').isValid";

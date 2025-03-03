@@ -13,7 +13,7 @@ export class ResidenceService {
     return this.http.get<Residence[]>(this.URL);
   }
   deleteResidence(id: any) {
-    this.http.delete<Residence[]>(`${this.URL}/${id}`);
+    return this.http.delete<Residence[]>(`${this.URL}${id}`);
   }
   getResidence(id: any) {
     return this.http.get<Residence>(`${this.URL}${id}`);
@@ -24,6 +24,4 @@ export class ResidenceService {
   updateResidence(data: Residence, id: any) {
     return this.http.put<Residence>(`${this.URL}${id}`, data);
   }
-
-
 }
